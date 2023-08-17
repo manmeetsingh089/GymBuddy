@@ -1,9 +1,3 @@
-#!/usr/bin/env python
-# coding: utf-8
-
-# In[1]:
-
-
 import cv2
 import mediapipe as mp
 import numpy as np
@@ -11,8 +5,8 @@ import os
 from time import sleep
 from threading import Thread
 
-mp_drawing = mp.solutions.drawing_utils
-mp_pose = mp.solutions.pose
+mp_drawing = mp.solutions.drawing_utils # to visualize the joint motions
+mp_pose = mp.solutions.pose #pose model for pose estimation
 
 # "C:\Users\Manmeet Singh\KneeBendVideo.mp4"
 # E:/Downloads/Untitled video - Made with Clipchamp.mp4
@@ -31,8 +25,8 @@ def calculate_angle(a, b, c):
 
 
 # cap = cv2.VideoCapture('C:/Users/Manmeet Singh/KneeBendVideo.mp4')
-cap = cv2.VideoCapture(0)
-cap.set(3,1080  )
+cap = cv2.VideoCapture(0) #setting up webcam
+cap.set(3,1080 )
 cap.set(4,1080)
 counter = 0
 i = 0.00
@@ -46,13 +40,13 @@ print("enter 0 for knee")
 print("enter 1 for elbow ")
 t= input()
 print("do have a good excercise session "+name )
-with mp_pose.Pose(min_detection_confidence=0.5, min_tracking_confidence=0.5) as pose:
-    while cap.isOpened():
+with mp_pose.Pose(min_detection_confidence=0.5, min_tracking_confidence=0.5) as pose: #mideapipe instance
+    while cap.isOpened(): #
         # global i
         # global t
-        ret, frame = cap.read()
+        ret, frame = cap.read() # ret is just a return function
 
-        image = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)
+        image = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB) #
         image.flags.writeable = False
 
         results = pose.process(image)
