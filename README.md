@@ -1,4 +1,2 @@
 # GymBuddy
-The mini-Project aims to count the rep of your knee bend for medical purposes .
-The counter has a timer of 8 sec after which only the counter will increase .
-Also the project monitors the angle of the bend between the hip,knee and ankle.
+Project aims to count the reps and hold timer for patient with temporary disabilities in joint and need a physiotherapist to help them. so this project using computer vision and mediapipe library helped them to count the reps and monitor the timer. The angle between the joints is also shown with text prompts like "bend your knee" or "now you can release the knee" for a person with knee impairment. By adding the same functionality for different exercise like bicep curls ,The project helps a person to do specific exercise of specific joints.
